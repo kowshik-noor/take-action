@@ -27,7 +27,7 @@ runs:
         ISSUE_JSON="$(jq '.issue' $GITHUB_EVENT_PATH)"
         ISSUE_CURRENTLY_ASSIGNED=`echo $ISSUE_JSON | jq '.assignees | length == 0'`
 
-        if [[ $BODY == *".take"* ]]; then
+        if [[ $BODY == *"Hold my beer, I got this"* ]]; then
           if [[ "$ISSUE_CURRENTLY_ASSIGNED" == true ]]; then
             echo "Is issue currently assigned: $ISSUE_CURRENTLY_ASSIGNED"
             echo "Assigning issue $ISSUE_NUMBER to $LOGIN"
